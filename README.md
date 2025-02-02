@@ -14,7 +14,7 @@
 https://sanaamariya.github.io/InnovateHers/
 
 ### Project Description
-[2-3 lines about what your project does]
+This project was designed to reserve seats at a library, to avoid rush and ensure maximum efficiency at the library during peak hours.
 
 ### The Problem statement
 Getting seats in the college library could be difficult during peak hours.This project helps to reserve seats by selecting the seat number and checking out by again selecting the seats and clicking the check out.
@@ -25,15 +25,9 @@ A website is created which allows to sign in and login with unique username and 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+HTML, CSS
+JavaScript
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
@@ -63,31 +57,11 @@ Home page with all features and logout option.
 ![IMG-20250130-WA0052 1](https://github.com/user-attachments/assets/b8546445-90d0-4747-9254-5cd07a626131)
 
 
-For Hardware:
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Team](Add photo of your team here)
-
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+
 *Explain what the video demonstrates*
 
 # Additional Demos
