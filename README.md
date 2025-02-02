@@ -17,10 +17,10 @@ https://sanaamariya.github.io/InnovateHers/
 [2-3 lines about what your project does]
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Getting seats in the college library could be difficult during peak hours.This project helps to reserve seats by selecting the seat number and checking out by again selecting the seats and clicking the check out.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+A website is created which allows to sign in and login with unique username and reserve the selected seat in the home page. There will be a display of available seats as Green in color and those seats reserved will be displayed red. Reservation is done by selecting the seat and clicking the reserve button. 
 
 ## Technical Details
 ### Technologies/Components Used
