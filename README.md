@@ -60,8 +60,8 @@ Login page with username and password entering options.
 Home page with all features and logout option.
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![IMG-20250130-WA0052 1](https://github.com/user-attachments/assets/b8546445-90d0-4747-9254-5cd07a626131)
+
 
 For Hardware:
 
