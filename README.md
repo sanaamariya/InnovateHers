@@ -94,9 +94,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Aysha Nabeel: HTML Website structure(Frontend)
+- Nikitha Tom: HTML and CSS(Frontend)
+- Sanaa Mariya Nisan: Backend and Github
 
 ---
 Made with ❤️ at TinkerHub
