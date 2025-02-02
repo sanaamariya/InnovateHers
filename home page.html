@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Seat Reservation</title>
+    <style>
+        body {
+            font-family: Rockwell, Trinite, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            border-radius: 5px;
+            margin: 5px 0;
+            background-color: #444;
+            width: 100%;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Logout button in the sidebar */
+        .logout-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logout-btn:hover {
+            background-color: darkred;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .login-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Seats container */
+        .seats-container {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Seat styles */
+        .seat {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .seat:hover {
+            transform: scale(1.1);
+        }
+
+        .available {
+            background-color: green;
+            color: white;
+        }
+
+        .reserved {
+            background-color: red;
+            color: white;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .legend div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .legend-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        .green-box {
+            background-color: green;
+        }
+
+        .red-box {
+            background-color: red;
+        }
+
+        /* Buttons */
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .reserve-btn, .check-in-btn, .check-out-btn {
+            background-color: rgb(247, 188, 29);
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <p class="login-message">You have successfully logged in.</p>
+        <h1>Library Seat Reservation</h1>
+
+        <!-- Seat Layout -->
+        <div class="seats-container">
+            <div class="seat available" data-seat-id="1">1</div>
+            <div class="seat available" data-seat-id="2">2</div>
+            <div class="seat available" data-seat-id="3">3</div>
+            <div class="seat available" data-seat-id="4">4</div>
+            <div class="seat available" data-seat-id="5">5</div>
+            <div class="seat available" data-seat-id="6">6</div>
+            <div class="seat available" data-seat-id="7">7</div>
+            <div class="seat available" data-seat-id="8">8</div>
+            <div class="seat available" data-seat-id="9">9</div>
+            <div class="seat available" data-seat-id="10">10</div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div><div class="legend-box green-box"></div> Available</div>
+            <div><div class="legend-box red-box"></div> Reserved</div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button class="btn reserve-btn" onclick="reserveSeat()">Reserve Seat</button>
+            <button class="btn check-in-btn">Check-in</button>
+            <button class="btn check-out-btn" onclick="checkOut()">Check-out</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedSeat = null;
+
+        // Handle seat selection for available seats
+        document.querySelectorAll('.seat.available').forEach(seat => {
+            seat.addEventListener('click', function() {
+                if (selectedSeat) {
+                    selectedSeat.classList.remove('selected');
+                }
+                selectedSeat = this;
+                selectedSeat.classList.add('selected');
+            });
+        });
+
+        // Reserve the selected seat
+        function reserveSeat() {
+            if (selectedSeat) {
+                if (selectedSeat.classList.contains('reserved')) {
+                    alert("This seat is already reserved!");
+                } else {
+                    // Change the seat to reserved
+                    selectedSeat.classList.remove('available');
+                    selectedSeat.classList.add('reserved');
+                    alert("Seat reserved!");
+                    selectedSeat = null;
+                }
+            } else {
+                alert("Please select a seat first!");
+            }
+        }
+
+        // Check-out (unreserve) the selected seat
+        function checkOut() {
+            if (selectedSeat) {
+                if (selectedSeat.classList.contains('reserved')) {
+                    // Change the seat to available
+                    selectedSeat.classList.remove('reserved');
+                    selectedSeat.classList.add('available');
+                    alert("Seat unreserved!");
+                    selectedSeat = null;
+                } else {
+                    alert("This seat was not reserved!");
+                }
+            } else {
+                alert("Please select a seat first!");
+            }
+        }
+
+        function logout() {
+            alert("Logging out...");
+            window.location.href = "signin.html";
+        }
+    </script>
+
+</body>
+</html>
+
+
