@@ -11,7 +11,7 @@
 - Member 3: Sanaa Mariya Nisan - Rajagiri School of Engineering and Technology
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://sanaamariya.github.io/InnovateHers/
 
 ### Project Description
 [2-3 lines about what your project does]
