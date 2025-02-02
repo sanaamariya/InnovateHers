@@ -47,14 +47,17 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![index](https://github.com/user-attachments/assets/2078e8f7-7002-49de-819e-a6d342e3f459)
+Index page with Title and Sign in/login options.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![sign in](https://github.com/user-attachments/assets/a83ddfbb-05e6-436f-bb72-1b8d7ca437db)
+Sign in page with Username, Email, Password entering options.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![login](https://github.com/user-attachments/assets/07cca079-edb0-4035-9931-c2f5c49b8e9f)
+Login page with username and password entering options.
+
+![home](https://github.com/user-attachments/assets/04f419b2-d605-47b3-a369-7c3d2833dcdd)
+Home page with all features and logout option.
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
